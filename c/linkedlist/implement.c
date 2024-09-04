@@ -16,7 +16,7 @@ void init(){
   memset(arr, -1, sizeof(arr));
   const int random = rand() % N;
   HEAD = random;
-  printf("Head is at index: %d\n", HEAD);
+  printf("Head initialized at index: %d\n", HEAD);
 }
 
 int insert(int value){
@@ -63,10 +63,9 @@ void delete(int pointer){
   } 
   arr[head] = (value(arr[head])<<BITS) + address(arr[next]);
   arr[next] = -1;
-  printf("next = %d \n", next);
 }
 
-int print_linked_list(){
+void print_linked_list(){
   int head = HEAD;
   while(arr[head] != -1){
     printf("%d -> ", value(arr[head]));
@@ -75,7 +74,7 @@ int print_linked_list(){
   printf("null\n");
 }
 
-int print_array(){
+void print_array(){
   for(int i = 0;i<N;i++) printf("%d: (value = %lld, next -> %lld) \n", i, arr[i]/N, arr[i]%N);
   printf("\n");
 }
@@ -84,12 +83,10 @@ int main(){
   srand(time(NULL)); 
   init();
   for(int i = 1; i<N; i++){
-    insert(i*4);
+    insert(i*5);
     print_linked_list();
   }
-  print_array();
   delete(address(arr[HEAD]));
-  print_array();
   print_linked_list();
   return 0;
 }
