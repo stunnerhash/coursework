@@ -25,9 +25,7 @@ void printUnique(int arr[], int n){
 
 int main(){
   int n;
-  printf("Enter size of array :\n");
   scanf("%d", &n);
-  printf("Enter array elements:\n");
   int a[n][n];
 
   for(int i = 0; i < n; i++)

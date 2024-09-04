@@ -12,9 +12,7 @@ int isPalindrome(char c[]){
 
 int main(){
   int n; 
-  printf("Enter number of strings: \n");
   scanf("%d", &n);
-  printf("Enter strings: \n");
   char c[n][50];
   loop(i,n) scanf("%s",&c[i]);
   loop(i,n) printf(isPalindrome(c[i])?"yes\n":"no\n") ;

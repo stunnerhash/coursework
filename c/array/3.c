@@ -4,9 +4,7 @@
 
 int main(){
   int n, m;
-  printf("Enter size of array in (n,m):\n");
   scanf("%d%d", &n, &m);
-  printf("Enter array elements:\n");
   int a[n][m];
 
   for(int i = 0; i < n; i++)

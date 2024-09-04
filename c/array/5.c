@@ -10,9 +10,7 @@ int compare(const void* a, const void* b) {
 
 int main(){
   int n; 
-  printf("Enter number of strings: \n");
   scanf("%d", &n);
-  printf("Enter strings: \n");
   char c[n][50];
   loop(i,n) scanf("%s",&c[i]);
   qsort(c, n, sizeof(c[0]), compare);

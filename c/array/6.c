@@ -3,9 +3,7 @@
 
 int main(){
   int n; 
-  printf("Enter size of array: \n");
   scanf("%d", &n);
-  printf("Enter array elements: \n");
   int row[n] = {}, col[n] = {};  
   loop(i,n) loop(j,n) {
     int x = 0; scanf("%d", &x);

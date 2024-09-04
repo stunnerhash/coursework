@@ -8,9 +8,7 @@ int max(int a, int b){
 
 int main(){
   int n; 
-  printf("Enter size of array:\n");
   scanf("%d", &n);
-  printf("Enter array elements:\n");
   int a[n][n];
   int ans[n], maxiIndex;
   int maxi = INT_MIN;
