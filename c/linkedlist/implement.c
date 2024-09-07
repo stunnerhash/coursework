@@ -9,17 +9,57 @@
 
 int HEAD;
 long long int arr[N];
-long long int address(long long int x) { return x%N; }
-long long int value(long long int x) { return x/N; }
 
-void init(){
+long long int address(long long int x) 
+{ 
+  return x%N; 
+}
+
+long long int value(long long int x) 
+{ 
+  return x/N; 
+}
+
+void init();
+
+int insert(int value);
+
+int update(int pointer, int value);
+
+void delete(int pointer);
+
+void print_linked_list();
+
+void print_array();
+
+int main()
+{
+  srand(time(NULL)); 
+
+  init();
+
+  for(int i = 1; i<N; i++){
+    insert(i*5);
+    print_linked_list();
+  }
+  
+  delete(address(arr[HEAD]));
+
+  print_linked_list();
+  
+  return 0;
+}
+
+void init()
+{
   memset(arr, -1, sizeof(arr));
   const int random = rand() % N;
   HEAD = random;
   printf("Head initialized at index: %d\n", HEAD);
 }
 
-int insert(int value){
+int insert(int value)
+{
   int head = HEAD;
   while(arr[head] != -1)
     head = address(arr[head]);
@@ -31,7 +71,8 @@ int insert(int value){
   return head;
 }
 
-int update(int pointer, int value){
+int update(int pointer, int value)
+{
   int head = HEAD;
   while(arr[head] != -1){
     if(head == pointer) break;
@@ -45,7 +86,8 @@ int update(int pointer, int value){
   return head;
 }
 
-void delete(int pointer){
+void delete(int pointer)
+{
   int head = HEAD;
   if(pointer == HEAD){
     printf("cannot delete the head of linked list\n");
@@ -65,7 +107,8 @@ void delete(int pointer){
   arr[next] = -1;
 }
 
-void print_linked_list(){
+void print_linked_list()
+{
   int head = HEAD;
   while(arr[head] != -1){
     printf("%d -> ", value(arr[head]));
@@ -74,20 +117,11 @@ void print_linked_list(){
   printf("null\n");
 }
 
-void print_array(){
+void print_array()
+{
   for(int i = 0;i<N;i++) printf("%d: (value = %lld, next -> %lld) \n", i, arr[i]/N, arr[i]%N);
   printf("\n");
 }
 
-int main(){
-  srand(time(NULL)); 
-  init();
-  for(int i = 1; i<N; i++){
-    insert(i*5);
-    print_linked_list();
-  }
-  delete(address(arr[HEAD]));
-  print_linked_list();
-  return 0;
-}
+
 
