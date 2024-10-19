@@ -46,6 +46,17 @@ struct node* insert(struct node *head, int value, int position);
  */
 struct node* append(struct node *head, int value);
 
+/*
+ * Function: delete
+ * Delete a node with specified position in the linked list
+ * Parameters:
+ *   - head: the head of the linked list.
+ *   - position: the position (0-based index) to be deleted
+ * Returns:
+ *   - The updated head of the linked list.
+ */
+struct node* delete(struct node* head, int position);
+
 /* 
  * Function: print_list
  * Prints the values in the linked list from head to the last node.

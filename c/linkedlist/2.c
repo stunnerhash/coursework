@@ -13,6 +13,6 @@ int main() {
 
   head = append(head, 99);
   print_list(head);
-
+  delete(head, 0);  
 	return 0;
 }
